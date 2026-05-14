@@ -6,10 +6,54 @@
     </head>
     <body>
         <h1 style="text-align: center; background-color: rgba(178, 6, 6, 0.655); margin: 0; font-size: 38px; font-family: monospace; padding: 5px;">Add Your Own Recipe!</h1>
-        <div style="background-color: rgba(235, 216, 182, 0.655); padding: 1%; margin: 1%; width: 50%; justify-self: center;">
-            <p style="text-align: center; font-size: larger; font-weight: normal;"> Name: ___ <br> Recipe Name: ___ <br> Ingredients: ___ <br> Steps: ___ <br> Main Protein: ___</p>
-            <p style="text-align: center; background-color: rgb(212, 162, 126); border-radius: 70%; padding: 10px; margin-left: 200px; margin-right: 200px;">Add Your Recipe</p>
+        <div style="background-color: rgba(235, 216, 182, 0.655); padding: 1%; margin: 1%; width: 55%; justify-self: center; display: flex; align-items: center; justify-content: center;">
+            <form>
+                <label for="name">Recipe Name: </label>
+                <input type="text" name="name" style="margin-bottom: 3px;"><br>
+                <label for="cName">Chef Name: </label>
+                <input type="text" name="cName" style="margin-bottom: 3px;"><br>
+                <label for="iDrop">Choose an Ingredient: </label>
+                <select name="iDrop" style="margin-bottom: 3px;">
+                    <% ing.forEach(function(ing){
+                    %>
+                        <option value="<%= ing.name %>"><%= ing.name %></option>
+                    <% });
+                    %>
+                </select><br>
+                <label for="pDrop">What's the Main Protein: </label>
+                <select name="pDrop" style="margin: 5px;">
+                    <option value="Beef">Beef</option>
+                    <option value="Chicken">Chicken</option>
+                    <option value="Pork">Pork</option>
+                    <option value="Meat & Poultry">Meat & Poultry</option>
+                    <option value="Seafood">Seafood</option>
+                    <option value="Plant">Plant</option>
+                </select><br>
+                <p style="margin: 0;">Add your Steps:</p>
+                <div id="stepContainer" >
+                    <textarea placeholder="1" rows="1" cols="40"></textarea><br>
+                </div>
+                <button type="button" onclick="addStep()">Add More Steps!</button><br>
+                <br><label for="des">Describe your dish: </label><br>
+                <textarea name="des" rows="3" cols="40"></textarea><br><br>
+                <button type="submit">Submit your Recipe!</button>
+            </form>
         </div>
         <a href="/" style="color: rgb(148, 21, 21); background-color: rgb(212, 162, 126); padding: 15px; border-radius: 70%; text-decoration: none; margin: 10px; position: absolute; left: 10px; bottom: 10px; font-size: 25px;">Home</a>
+        <script>
+            var stepNumber =2
+            function addStep() {
+            const container = document.getElementById('stepContainer');
+            const newInput = document.createElement('textarea');
+
+            newInput.name = 'dynamic_field[]';
+            newInput.cols = 40;
+            newInput.rows = 1;
+            newInput.placeholder = stepNumber;
+            stepNumber++;
+            container.appendChild(newInput);
+            container.appendChild(document.createElement('br'));
+            }
+        </script>
     </body>
 </html>
