@@ -7,19 +7,48 @@
     <body>
         <h1 style="text-align: center; background-color: rgba(178, 6, 6, 0.655); margin: 0; font-size: 38px; font-family: monospace; padding: 5px;">Check Out All These Recipes!</h1>
         <div style="background-color: rgba(235, 216, 182, 0.655); padding: 1.5%; margin: 1%;">
-            <div class="container">
-                <div>Protein:___</div>
-                <div>Diet:___</div>
-                <div>JF<3___</div>
+            <div class="container" style="padding: 3px;">
+                <a href="/recipes/Any">
+                    <button>Any</button>
+                </a>
+                <a href="/recipes/Beef">
+                    <button>Beef</button>
+                </a>
+                <a href="/recipes/Chicken">
+                    <button>Chicken</button>
+                </a>
+                <a href="/recipes/Pork">
+                    <button>Pork</button>
+                </a>
+                <a href="/recipes/Other">
+                    <button>Meat & Poultry</button>
+                </a>
+                <a href="/recipes/Seafood">
+                    <button>Seafood</button>
+                </a>
+                <a href="/recipes/Plant">
+                    <button>Plant</button>
+                </a>
             </div>
             <% if(rep.length > 0) {
                 rep.forEach(function(rep) {
+                    if(protein == "Any") {
             %>
-                <div class="RecipesContainer" style="border-left-style: solid; border-right-style: solid; border-width: 1px; border-color: rgb(224, 177, 173); margin: 0; margin-top: 5px;">
-                    <a href="/recipe/<%= rep.recipesID %>" style="margin: 0; padding: 3px; font-size: 25px; font-weight: bold; color: black; text-decoration: none;"><%= rep.name %> - Chef <%= rep.chef %></a>   
-                    <p style="margin: 0; padding-top: 2px; padding-left: 5px; padding-right: 75px; font-size: 18px;"> <%= rep.des %></p>
-                </div>
-            <%     
+                        <div class="RecipesContainer" style="border-left-style: solid; border-right-style: solid; border-width: 1px; border-color: rgb(224, 177, 173); margin: 0; margin-top: 5px;">
+                            <a href="/recipe/<%= rep.recipesID %>" style="margin: 0; padding: 3px; font-size: 25px; font-weight: bold; color: black; text-decoration: none;"><%= rep.name %> - Chef <%= rep.chef %></a>   
+                            <p style="margin: 0; padding-top: 2px; padding-left: 5px; padding-right: 75px; font-size: 18px;"> <%= rep.des %></p>
+                        </div>
+            <%    
+                } else {
+                    if(rep.protein == protein) {
+            %>      
+                        <div class="RecipesContainer" style="border-left-style: solid; border-right-style: solid; border-width: 1px; border-color: rgb(224, 177, 173); margin: 0; margin-top: 5px;">
+                            <a href="/recipe/<%= rep.recipesID %>" style="margin: 0; padding: 3px; font-size: 25px; font-weight: bold; color: black; text-decoration: none;"><%= rep.name %> - Chef <%= rep.chef %></a>   
+                            <p style="margin: 0; padding-top: 2px; padding-left: 5px; padding-right: 75px; font-size: 18px;"> <%= rep.des %></p>
+                        </div>
+            <%
+                    }
+                }
                 });
             }
             %>

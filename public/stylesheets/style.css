@@ -43,3 +43,14 @@ body {
     border-style: solid;
     border-color: #534c4c;
 }
+
+.container button {
+  margin: 2px;
+  margin-left: 5px;
+  background-color: #868686;
+  font-size: 15px;
+}
+
+.container a {
+  text-decoration: none;
+}

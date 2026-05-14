@@ -15,13 +15,14 @@ router.get("/", function(req, res){
 	});
 });
 
-router.get("/recipes", function(req, res) {
+router.get("/recipes/:protein", function(req, res) {
+    protein = req.params.protein;
     let sqlR = "SELECT * FROM Recipes ORDER BY recipesID";
     connection.query(sqlR, (error, data) => {
 	    if(error){	
             throw error;
         } else {
-            res.render('recipes', {rep:data});
+            res.render('recipes', {rep:data, protein:protein});
         }
 	});
 });
