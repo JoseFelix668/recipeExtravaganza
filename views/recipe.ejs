@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="/stylesheets/style.css">
+        <title>JF's Recipe Extravaganza</title>
+    </head>
+    <body>
+        <div class="recipePop" style="background-color: rgb(236, 236, 212); height: 100vh; width: 100vw;">
+            <h1 style="text-align: center; background-color: rgba(178, 6, 6, 0.655); margin: 0; font-size: 38px; font-family: monospace; padding: 5px;"><%= rep[recipeID-1].name; %></h1>
+            <div style="background-color: rgba(235, 216, 182, 0.655); margin: 10px;">
+                <div class="recipeBox" style="background-color: rgba(235, 216, 182, 0.655); text-align: left;">
+                    <h2 style="margin: 3px; font-size: 25px;">Chef: <%= rep[recipeID-1].chef; %></h2>
+                    <h2 style="margin: 3px; font-size: 25px; padding-top: 5px;">Ingredients:</h2>
+                    <ul style="margin: 3px; font-size: large;">
+                        <% if(ri.length > 0) {
+                            ri.forEach(function(ri) {
+                                if(ri.rID == recipeID) {
+                        %>
+                            <li>
+                                <%= ing[ri.iID - 1].name; %>
+                            </li>
+                        <%     
+                            }
+                            });
+                        }
+                        %>
+                    </ul>
+                    <h2 style="margin: 3px; font-size: 25px; padding-top: 5px;">Steps:</h2>
+                    <ol style="margin: 3px; font-size: large;">
+                        <% if(stp.length > 0) {
+                            stp.forEach(function(stp) {
+                                if(stp.rID == recipeID) {
+                        %>
+                            <li style="margin-bottom: 1px;">
+                                <%= stp.step; %>
+                            </li>
+                        <%     
+                            }
+                            });
+                        }
+                        %>
+                    </ol>
+                </div>
+            </div>
+            <a href="/recipes" style="color: rgb(148, 21, 21); background-color: rgb(212, 162, 126); padding: 15px; border-radius: 70%; text-decoration: none; margin: 10px; position: absolute; left: 10px; bottom: 10px; font-size: 25px;">Back To Recipes</a>
+        </div>
+    </body>
+</html>

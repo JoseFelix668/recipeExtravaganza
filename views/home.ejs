@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="/stylesheets/style.css">
+        <title>JF's Recipe Extravaganza</title>
+    </head>
+    <body>
+        <div class="JFImage" style="display: flex; justify-content: center;">
+            <img src="/images/JF's.svg" alt="JF's Recipe Extravaganza" style="width: 60vw; height: 40vh;">
+        </div>
+        <div style="background-color: rgba(235, 216, 182, 0.655); border-radius: 10%; margin-left: 1%; margin-right: 1%; padding: 2%;">
+            <h2 style="margin: 0;"><u>JF's Favorite Meal</u></h2>
+            <h3 style="font-size: x-large; margin: 0; padding-top: 1%; padding-bottom: 1%;"><%=rep[0].name%>-</h3>
+            <p style="margin: 0; font-size: 17px; padding-bottom: 0px; margin-bottom: 0px;"><%=rep[0].des%><br> <br> </p>
+            <a href="/recipe/1" style="color: black; font-size: 17px; text-decoration: none;"> >> Check Out His Recipe! << </a>
+            <h2 style="margin: 0; padding-top: 2%;"><u>Why Trust This Guy?</u></h2>
+            <p style="margin: 0; padding-top: 1%; font-size: 17px;">While JF isn't a trained chef and couldn't describe foods with any words other than "Yum" and "mmm..bad." JF has been cooking for himself and his family for years, so while he doesn't know how something ends up tasting oh so good, JF knows how to follow a recipe and keep his kitchen clean.</p>
+        </div>
+        <div class="column left">
+            <br>
+            <a href="/recipes" style="background-color: rgb(212, 162, 126); border-radius: 70%; color: rgb(148, 21, 21); padding: 20px; padding-left: 50px; padding-right: 50px; font-size: larger; text-decoration: none;">Recipes</a>
+        </div>
+        <div class="column right">
+            <br>
+            <a href="/add" style="background-color: rgb(212, 162, 126); border-radius: 70%; color: rgb(148, 21, 21); padding: 20px; padding-left: 50px; padding-right: 50px; font-size: larger; text-decoration: none;">Add Yours!</a>
+        </div>
+    </body>
+</html>

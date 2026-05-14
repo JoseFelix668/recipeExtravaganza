@@ -1,0 +1,45 @@
+body {
+  background-color: rgb(236, 236, 212);
+  margin: 0;
+}
+
+.column {
+    padding: 10px;
+    color: black;
+    font-size: 25px;
+    text-align: center; 
+}
+
+.left{
+  float: left;
+  width: 40%;
+}
+
+.right{
+  float: right;
+  width: 40%;
+}
+
+.recipeBox {
+    background-color: #706767;
+    width: 100%;
+    margin-bottom: 3px;
+    padding: 5px;
+}
+
+.container {
+    display: flex;
+    background-color: #706767;
+    justify-content: center;
+    width: 100%;
+    margin-bottom: 3px;
+}
+
+.container div {
+    margin-right: 5px;
+    margin-left: 5px;
+    color: rgb(255, 255, 255);
+    font-size: 20px;
+    border-style: solid;
+    border-color: #534c4c;
+}

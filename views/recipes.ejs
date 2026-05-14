@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="/stylesheets/style.css">
+        <title>JF's Recipe Extravaganza</title>
+    </head>
+    <body>
+        <h1 style="text-align: center; background-color: rgba(178, 6, 6, 0.655); margin: 0; font-size: 38px; font-family: monospace; padding: 5px;">Check Out All These Recipes!</h1>
+        <div style="background-color: rgba(235, 216, 182, 0.655); padding: 1.5%; margin: 1%;">
+            <div class="container">
+                <div>Protein:___</div>
+                <div>Diet:___</div>
+                <div>JF<3___</div>
+            </div>
+            <% if(rep.length > 0) {
+                rep.forEach(function(rep) {
+            %>
+                <div class="RecipesContainer" style="border-left-style: solid; border-right-style: solid; border-width: 1px; border-color: rgb(224, 177, 173); margin: 0; margin-top: 5px;">
+                    <a href="/recipe/<%= rep.recipesID %>" style="margin: 0; padding: 3px; font-size: 25px; font-weight: bold; color: black; text-decoration: none;"><%= rep.name %> - Chef <%= rep.chef %></a>   
+                    <p style="margin: 0; padding-top: 2px; padding-left: 5px; padding-right: 75px; font-size: 18px;"> <%= rep.des %></p>
+                </div>
+            <%     
+                });
+            }
+            %>
+            </div>
+        <br>
+        <a href="/" style="color: rgb(148, 21, 21); background-color: rgb(212, 162, 126); padding: 15px; border-radius: 70%; text-decoration: none; margin: 10px; position: absolute; left: 10px; bottom: 10px; display: block; font-size: 25px;">Home</a>
+    </body>
+</html>
